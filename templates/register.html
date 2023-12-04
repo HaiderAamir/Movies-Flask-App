@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Streamlab - Video Streaming HTML5 Template" />
+    <meta name="description" content="Streamlab - Video Streaming HTML5 Template" />
+    <meta name="author" content="StreamLab" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>WatchWhistle - Video Streaming</title>
+    <!-- Favicon -->
+    <link rel= "stylesheet" href= "{{ url_for('static',filename='assets/images/favicon.png') }}">
+    <!--<link rel="shortcut icon" href="images/favicon.png">-->
+    <!-- CSS bootstrap-->
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='assets/css/bootstrap.min.css') }}">
+    <!--<link rel="stylesheet" href="css/bootstrap.min.css" />-->
+    <!--  Style -->
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='assets/css/style.css') }}">
+    <!--<link rel="stylesheet" href="css/style.css" />-->
+    <!--  Responsive -->
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='assets/css/responsive.css') }}">
+    <!--<link rel="stylesheet" href="css/responsive.css" />-->
+</head>
+
+<body>
+
+    <!--=========== Loader =============-->
+    <div id="gen-loading">
+        <div id="gen-loading-center">
+            <img src="/static/assets/images/logo-1.png" alt="loading">
+        </div>
+    </div>
+    <!--=========== Loader =============-->
+
+    
+    <!-- register -->
+    <section class="position-relative pb-0">
+        <div class="gen-register-page-background" style="background-image: url('/static/assets/images/background/asset-3.jpg');">
+        </div>
+        <div class="container">
+            
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="text-center">
+                       
+                        <form id="pms_register-form" class="pms-form" method="POST" action="/register">
+                             <!-- Jinja tempplating for showing flash messages-->
+                        {% with messages = get_flashed_messages(with_categories=true) %}
+                        {% if messages %}
+                            {% for category, message in messages %}
+                                <div class="alert alert-{{category}} alert-dismissible fade show" role="alert">
+                                {{message}}
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                                </div>
+                            {% endfor %}
+                            {% endif %}
+                        {% endwith %}
+                            <h4>Register</h4>
+                            <input type="hidden" id="pmstkn" name="pmstkn" value="59b502f483"><input type="hidden"
+                                name="_wp_http_referer" value="/register/">
+                            <ul class="pms-form-fields-wrapper pl-0">
+                                <li class="pms-field pms-user-login-field ">
+                                    <label for="pms_user_login">Username *</label>
+                                    <input id="pms_user_login" name="user_login" type="text" value="">
+                                </li>
+                                <li class="pms-field pms-user-email-field ">
+                                    <label for="pms_user_email">E-mail *</label>
+                                    <input id="pms_user_email" name="user_email" type="text" value="">
+                                </li>
+                                <li class="pms-field pms-first-name-field ">
+                                    <label for="pms_first_name">First Name</label>
+                                    <input id="pms_first_name" name="first_name" type="text" value="">
+                                </li>
+                                <li class="pms-field pms-last-name-field ">
+                                    <label for="pms_last_name">Last Name</label>
+                                    <input id="pms_last_name" name="last_name" type="text" value="">
+                                </li>
+                                <li class="pms-field pms-pass1-field">
+                                    <label for="pms_pass1">Password *</label>
+                                    <input id="pms_pass1" name="pass1" type="password">
+                                </li>
+                                <li class="pms-field pms-pass2-field">
+                                    <label for="pms_pass2">Repeat Password *</label>
+                                    <input id="pms_pass2" name="pass2" type="password">
+                                </li>
+                                <li class="pms-field pms-field-subscriptions ">
+                                    <div class="pms-subscription-plan"><label><input type="radio"
+                                                name="subscription_plans" data-price="1000" data-duration="1"
+                                                value="1000" checked="checked" data-default-selected="true"><span
+                                                class="pms-subscription-plan-name">Premium</span><span
+                                                class="pms-subscription-plan-price"><span class="pms-divider"> -
+                                                </span><span class="pms-subscription-plan-price-value">1000</span><span
+                                                    class="pms-subscription-plan-currency">Rs.</span><span
+                                                    class="pms-divider"> / </span>1 Month</span><span
+                                                class="pms-subscription-plan-trial"></span><span
+                                                class="pms-subscription-plan-sign-up-fee"></span></label></div>
+                                    <div class="pms-subscription-plan"><label><input type="radio"
+                                                name="subscription_plans" data-price="750" data-duration="1" value="750"
+                                                data-default-checked="false"><span
+                                                class="pms-subscription-plan-name">Standard</span><span
+                                                class="pms-subscription-plan-price"><span class="pms-divider"> -
+                                                </span><span class="pms-subscription-plan-price-value">750</span><span
+                                                    class="pms-subscription-plan-currency">Rs.</span><span
+                                                    class="pms-divider"> / </span>1 Month</span><span
+                                                class="pms-subscription-plan-trial"></span><span
+                                                class="pms-subscription-plan-sign-up-fee"></span></label></div>
+                                    <div class="pms-subscription-plan"><label><input type="radio"
+                                                name="subscription_plans" data-price="500" data-duration="1" value="500"
+                                                data-default-checked="false"><span
+                                                class="pms-subscription-plan-name">Basic</span><span
+                                                class="pms-subscription-plan-price"><span class="pms-divider"> -
+                                                </span><span class="pms-subscription-plan-price-value">500</span><span
+                                                    class="pms-subscription-plan-currency">Rs.</span><span
+                                                    class="pms-divider"> / </span>1 Month</span><span
+                                                class="pms-subscription-plan-trial"></span><span
+                                                class="pms-subscription-plan-sign-up-fee"></span></label></div>
+                                    <div id="pms-paygates-wrapper"><input type="hidden" class="pms_pay_gate"
+                                            name="pay_gate" value="paypal_standard"></div>
+                                </li>
+                            </ul>
+                            <span id="pms-submit-button-loading-placeholder-text" class="d-none">Processing. Please
+                                wait...</span>
+                            <input name="pms_register" type="submit" value="Register">
+                            <a href="/" style="float: right; padding-top: 5%;">back to login</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- register -->
+
+    <!-- Back-to-Top start -->
+    <div id="back-to-top">
+        <a class="top" id="top" href="#top"> <i class="ion-ios-arrow-up"></i> </a>
+    </div>
+    <!-- Back-to-Top end -->
+
+    <!-- js-min -->
+    <script type=text/javascript src="{{url_for('static', filename='assets/js/jquery-3.6.0.min.js') }}"></script>
+    <script type=text/javascript src="{{url_for('static', filename='assets/js/asyncloader.min.js') }}"></script>
+    <!--<script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/asyncloader.min.js"></script>-->
+
+    <!-- JS bootstrap -->
+    <script type=text/javascript src="{{url_for('static', filename='assets/js/bootstrap.min.js') }}"></script>
+    <!--<script src="js/bootstrap.min.js"></script>-->
+
+    <!-- owl-carousel -->
+    <script type=text/javascript src="{{url_for('static', filename='assets/js/owl.carousel.min.js') }}"></script>
+    <!--<script src="js/owl.carousel.min.js"></script>-->
+
+    <!-- counter-js -->
+    <script type=text/javascript src="{{url_for('static', filename='assets/js/jquery.waypoints.min.js') }}"></script>
+    <script type=text/javascript src="{{url_for('static', filename='assets/js/jquery.counterup.min.js') }}"></script>
+    <!--<script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>-->
+
+    <!-- popper-js -->
+    <script type=text/javascript src="{{url_for('static', filename='assets/js/popper.min.js') }}"></script>
+    <script type=text/javascript src="{{url_for('static', filename='assets/js/asyncloader.min.js') }}"></script>
+    <!--<script src="js/popper.min.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>-->
+
+    <!-- Iscotop -->
+    <script type=text/javascript src="{{url_for('static', filename='assets/js/isotope.pkgd.min.js') }}"></script>
+    <!--<script src="js/isotope.pkgd.min.js"></script>-->
+
+
+    <script type=text/javascript src="{{url_for('static', filename='assets/js/jquery.magnific-popup.min.js') }}"></script>
+    <!--<script src="js/jquery.magnific-popup.min.js"></script>-->
+
+    <script type=text/javascript src="{{url_for('static', filename='assets/js/slick.min.js') }}"></script>
+    <!--<script src="js/slick.min.js"></script>-->
+
+    <script type=text/javascript src="{{url_for('static', filename='assets/js/streamlab-core.js') }}"></script>
+    <!--<script src="js/streamlab-core.js"></script>-->
+
+    <script type=text/javascript src="{{url_for('static', filename='assets/js/script.js') }}"></script>
+    <!--<script src="js/script.js"></script>-->
+
+
+    <!--Haider's Software-->
+
+</body>
+
+</html>

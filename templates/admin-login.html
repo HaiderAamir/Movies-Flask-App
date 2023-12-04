@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Streamlab - Video Streaming HTML5 Template" />
+    <meta name="description" content="Streamlab - Video Streaming HTML5 Template" />
+    <meta name="author" content="StreamLab" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>WatchWhistle - Video Streaming</title>
+    <!-- Favicon -->
+    <link rel= "stylesheet" href= "{{ url_for('static',filename='assets/images/favicon.ico') }}">
+    <!--<link rel="shortcut icon" href="images/favicon.ico">-->
+
+    <!-- CSS bootstrap-->
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='assets/css/bootstrap.min.css') }}">
+    <!--<link rel="stylesheet" href="css/bootstrap.min.css" />-->
+
+    <!--  Style -->
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='assets/css/style.css') }}">
+    <!--<link rel="stylesheet" href="css/style.css" />-->
+
+    <!--  Responsive -->
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='assets/css/responsive.css') }}">
+    <!--<link rel="stylesheet" href="css/responsive.css" />-->
+</head>
+
+<body>
+
+    
+
+    <!--=========== Loader =============-->
+    <div id="gen-loading">
+        <div id="gen-loading-center">
+            <img src="/static/assets/images/watchwhistlelogo.png" alt="loading">
+        </div>
+    </div>
+    <!--=========== Loader =============-->
+
+
+    
+    <!-- Log-in  -->
+    <section class="position-relative pb-0">
+        <div class="gen-login-page-background" style="background-image: url('/static/assets/images/background/asset-54.jpg');"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="text-center">
+                        <!-- Jinja tempplating for showing flash messages-->
+                        {% with messages = get_flashed_messages(with_categories=true) %}
+                        {% if messages %}
+                            {% for category, message in messages %}
+                                <div class="alert alert-{{category}} alert-dismissible fade show" role="alert">
+                                {{message}}
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                                </div>
+                            {% endfor %}
+                            {% endif %}
+                        {% endwith %}
+
+                        <form name="pms_login" id="pms_login" action="/admin-index" method="post">
+                            
+                            <h4>Admin Signin</h4>
+                            <p class="login-username">
+                                <label for="user_login">Username</label>
+                                <input type="text" name="uname" id="user_login" class="input" value="" size="20">
+                            </p>
+                            <p class="login-password">
+                                <label for="user_pass">Password</label>
+                                <input type="password" name="password" id="user_pass" class="input" value="" size="20">
+                            </p>
+                            
+                            <p class="login-submit" style="padding-left: 37%; padding-top:5%;">
+                                <input type="submit" name="wp-submit" id="wp-submit" class="button button-primary"
+                                    value="Log In">
+                                <input type="hidden" name="redirect_to">
+                            </p>
+                            
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Log-in  -->
+
+    <!-- Back-to-Top start -->
+    <div id="back-to-top">
+        <a class="top" id="top" href="#top"> <i class="ion-ios-arrow-up"></i> </a>
+    </div>
+    <!-- Back-to-Top end -->
+
+    <!-- js-min -->
+    <script type=text/javascript src="{{url_for('static', filename='assets/js/jquery-3.6.0.min.js') }}"></script>
+    <script type=text/javascript src="{{url_for('static', filename='assets/js/asyncloader.min.js') }}"></script>
+    <!--<script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/asyncloader.min.js"></script>-->
+
+    <!-- JS bootstrap -->
+    <script type=text/javascript src="{{url_for('static', filename='assets/js/bootstrap.min.js') }}"></script>
+    <!--<script src="js/bootstrap.min.js"></script>-->
+
+    <!-- owl-carousel -->
+    <script type=text/javascript src="{{url_for('static', filename='assets/js/owl.carousel.min.js') }}"></script>
+    <!--<script src="js/owl.carousel.min.js"></script>-->
+
+    <!-- counter-js -->
+    <script type=text/javascript src="{{url_for('static', filename='assets/js/jquery.waypoints.min.js') }}"></script>
+    <script type=text/javascript src="{{url_for('static', filename='assets/js/jquery.counterup.min.js') }}"></script>
+    <!--<script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>-->
+
+    <!-- popper-js -->
+    <script type=text/javascript src="{{url_for('static', filename='assets/js/popper.min.js') }}"></script>
+    <script type=text/javascript src="{{url_for('static', filename='assets/js/swiper-bundle.min.js') }}"></script>
+    <!--<script src="js/popper.min.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>-->
+
+    <!-- Iscotop -->
+    <script type=text/javascript src="{{url_for('static', filename='assets/js/isotope.pkgd.min.js') }}"></script>
+    <!--<script src="js/isotope.pkgd.min.js"></script>-->
+
+    <script type=text/javascript src="{{url_for('static', filename='assets/js/jquery.magnific-popup.min.js') }}"></script>
+    <!--<script src="js/jquery.magnific-popup.min.js"></script>-->
+
+    <script type=text/javascript src="{{url_for('static', filename='assets/js/slick.min.js') }}"></script>
+    <!--<script src="js/slick.min.js"></script>-->
+
+    <script type=text/javascript src="{{url_for('static', filename='assets/js/streamlab-core.js') }}"></script>
+    <!--<script src="js/streamlab-core.js"></script>-->
+
+    <script type=text/javascript src="{{url_for('static', filename='assets/js/script.js') }}"></script>
+    <!--<script src="js/script.js"></script>-->
+
+<!--Haider's Software-->
+</body>
+
+</html>

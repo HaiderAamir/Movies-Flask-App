@@ -1,0 +1,13 @@
+{
+    "para":
+    {
+        "local_uri": "mysql://root:@localhost/database",
+        "poster_location": "static\\poster",
+        "movies_location": "static\\movies",
+        "admin_user": "admin",
+        "admin_password": "abc123",
+        "gmail-user": "haideraamir07@gmail.com",
+        "gmail-password": "haider072021"
+
+    }
+}
